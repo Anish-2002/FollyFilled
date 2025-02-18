@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folly Filled</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #4d4dff;
+        }
+        .cover-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 15px;
+        }
+        .cover-box {
+            position: relative;
+            width: 45%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+        .cover-box:hover {
+            transform: scale(1.05);
+        }
+        .cover-box a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+        }
+        .section-padding {
+            padding: 50px 15px;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .cover-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cover-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Photos/Logo.png" alt="Folly Filled Logo" width="150"> Folly Filled
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Catering</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contact Us</a></li>
+                </ul>
+                <form class="d-flex ms-3">
+                    <input class="form-control" type="search" id="searchBar" placeholder="Search Products...">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Section -->
+    <div class="cover-section">
+        <div class="cover-box" style="background-image: url('Photos/Logo.png');">
+            <a href="sandwiches.html">Sandwiches</a>
+        </div>
+        <div class="cover-box" style="background-image: url('Photos/CajunChicken.png');">
+            <a href="asiandelights.html">Asian Delights</a>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="container section-padding">
+        <h3 class="text-center">Our Best Sellers</h3>
+        <div class="row" id="productList">
+            <script>
+                let products = [
+                    { name: "Cajun Chicken Sando", price: "$9.99", image: "Photos/CajunChicken.png" },
+                    { name: "Chicken Ragu Sando", price: "$10.99", image: "product2.jpg" },
+                    { name: "Onion Melt", price: "$8.99", image: "product3.jpg" },
+                    { name: "Tuna Melt", price: "$11.99", image: "product4.jpg" },
+                    { name: "BBQ Beef Brisket", price: "$12.99", image: "product5.jpg" },
+                    { name: "Avocado & Halloumi", price: "$9.49", image: "product6.jpg" },
+                    { name: "Pulled Pork Delight", price: "$13.99", image: "product7.jpg" },
+                    { name: "Veggie Supreme", price: "$8.49", image: "product8.jpg" }
+                ];
+
+                function displayProducts(filter = "") {
+                    let productContainer = document.getElementById("productList");
+                    productContainer.innerHTML = "";
+                    products.filter(p => p.name.toLowerCase().includes(filter.toLowerCase())).forEach(p => {
+                        productContainer.innerHTML += `
+                            <div class="col-md-3 mb-4">
+                                <a href="product-details.html?name=${p.name}" class="text-decoration-none text-dark">
+                                    <div class="card">
+                                        <img src="${p.image}" class="card-img-top" alt="${p.name}">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">${p.name}</h5>
+                                            <p class="card-text">${p.price}</p>
+                                            <button class="btn btn-success">View Details</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>`;
+                    });
+                }
+                
+                document.getElementById("searchBar").addEventListener("input", function () {
+                    displayProducts(this.value);
+                });
+                
+                displayProducts();
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Folly Filled. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

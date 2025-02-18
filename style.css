@@ -1,0 +1,225 @@
+/* Basic Reset and Font Imports */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Header Styles */
+header {
+    background-color: #fff; /* White header background */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center the content */
+    justify-content: space-between;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust logo height as needed */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-gap: 20px;
+}
+
+.item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflowing image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.item img {
+    width: 100%;
+    display: block;
+}
+
+.item h3 {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow on top */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    max-height: 50px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    height: 30px;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cuisine-categories {
+    display: flex;
+    justify-content: center; /* Center the frames horizontally */
+    gap: 40px; /* Space between the frames */
+}
+
+.cuisine-frame {
+    width: 45%; /* Adjust as needed */
+    border: 2px solid #333; /* Add frame border */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* For positioning the heading */
+}
+
+.cuisine-frame img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.cuisine-frame:hover img {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.cuisine-frame h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 24px; /* Adjust size as needed */
+    margin-left: 20px; /* Space from search bar */
+}
+
+.cart-icon a {
+    color: #333; /* Or any color you prefer */
+}
+
+/* ... (Existing CSS) */
+
+/* Media Queries for Responsiveness */
+
+/* Styles for smaller screens (e.g., tablets and phones) */
+@media (max-width: 768px) {  /* Adjust breakpoint as needed */
+
+    .header-content {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center; /* Center horizontally */
+        text-align: center; /* Center text in header */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        margin-top: 10px; /* Add some space above nav */
+    }
+
+    nav li {
+        margin: 5px 0; /* Space between stacked nav items */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .search {
+        margin-top: 10px; /* Space above search */
+    }
+
+    .cuisine-categories {
+        flex-direction: column; /* Stack cuisine frames */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cuisine-frame {
+        width: 90%; /* Make frames almost full width */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer elements */
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 10px; /* Space above social icons */
+    }
+
+}
+
+
+@media (max-width: 480px) { /* Styles for even smaller screens (phones) */
+
+    .cuisine-frame h3 {
+        font-size: 1.2em; /* Smaller heading size */
+    }
+
+    .cart-icon {
+        font-size: 20px;
+    }
+
+}
