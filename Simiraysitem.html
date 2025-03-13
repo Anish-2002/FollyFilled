@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FollyFilled - Menu Item</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 180px;
+        }
+        nav {
+            background-color: #004080;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+        .menu-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+        .menu-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .menu-item-image {
+            width: 50%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .menu-item-details {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .ingredients {
+            background: #e6e6e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button a {
+            display: inline-flex;
+            align-items: center;
+            background: #004080;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .back-button a i {
+            margin-right: 8px;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="Photos/Logo.png" alt="FollyFilled Logo"></a>
+    </header>
+    <nav>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="menu-container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="index.html#menu">Menu</a> &gt; Menu Item Name
+        </div>
+        <h2>Menu Item Name</h2>
+        <div class="menu-content">
+            <img src="Photos/CajunChicken.png" alt="Menu Item" class="menu-item-image">
+            <div class="menu-item-details">
+                <p><strong>Description:</strong> A delicious sandwich with fresh ingredients and rich flavors.</p>
+                <div class="ingredients">
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>Bread</li>
+                        <li>Grilled Chicken</li>
+                        <li>Lettuce</li>
+                        <li>Tomato</li>
+                        <li>Cheese</li>
+                        <li>Special Sauce</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="back-button">
+            <a href="index.html#menu"><i class="fas fa-arrow-left"></i> Back to Menu</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 FollyFilled. All rights reserved.</p>
+    </footer>
+</body>
+</html>

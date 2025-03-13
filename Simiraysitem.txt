@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Item - FollyFilled</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .menu-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .menu-title {
+            font-size: 28px;
+            margin: 20px 0;
+            color: #004080;
+        }
+        .menu-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .ingredients {
+            text-align: left;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .ingredients h3 {
+            color: #004080;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Photos/SampleItem.png" alt="Menu Item" class="menu-image">
+        <h1 class="menu-title">Menu Item Name</h1>
+        <p class="menu-description">A delicious and mouthwatering dish made with fresh ingredients, perfect for any meal.</p>
+        <div class="ingredients">
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Ingredient 1</li>
+                <li>Ingredient 2</li>
+                <li>Ingredient 3</li>
+                <li>Ingredient 4</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 FollyFilled. All rights reserved.</p>
+    </footer>
+</body>
+</html>

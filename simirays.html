@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FollyFilled</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 180px;
+        }
+        nav {
+            background-color: #004080;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+        .slideshow {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .slides img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slides img.active {
+            opacity: 1;
+        }
+        .menu-list {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f8f8f8;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .menu-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .menu-item img {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .menu-item a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #004080;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="Photos/Logo.png" alt="FollyFilled Logo"></a>
+    </header>
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="slideshow">
+        <div class="slides">
+            <img src="Photos/SausageMuffin.png" alt="Slide 1" class="active">
+            <img src="Photos/CajunChicken.png" alt="Slide 2">
+            <img src="Photos/ChickenRagu.png" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="menu-list" id="sandwich-menu">
+        <h2>Sandwich Menu</h2>
+        <div class="menu-item"><img src="Photos/CajunChicken.png" alt="Classic Sandwich"><a href="MenuItem.html">Classic Sandwich - $8.99</a></div>
+        <div class="menu-item"><img src="Photos/ChickenRagu.png" alt="Grilled Panini"><a href="item.html?item=panini">Grilled Panini - $10.99</a></div>
+        <div class="menu-item"><img src="Photos/SausageMuffin.png" alt="Loaded Wrap"><a href="item.html?item=wrap">Loaded Wrap - $9.99</a></div>
+    </div>
+
+    <div class="menu-list" id="asian-menu">
+        <h2>Asian Delights Menu</h2>
+        <div class="menu-item"><img src="satay.jpg" alt="Chicken Satay"><a href="item.html?item=satay">Chicken Satay - $12.99</a></div>
+        <div class="menu-item"><img src="springrolls.jpg" alt="Spring Rolls"><a href="item.html?item=springrolls">Spring Rolls - $7.99</a></div>
+        <div class="menu-item"><img src="padthai.jpg" alt="Pad Thai"><a href="item.html?item=padthai">Pad Thai - $11.99</a></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FollyFilled. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function moveSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        setInterval(moveSlide, 3000);
+    </script>
+</body>
+</html>
